@@ -1,17 +1,17 @@
 'use client'
 
 import React, { useState, useRef, useEffect } from "react";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import classNames from "classnames";
 
 import SearchBox from "./SearchBox";
-// import CartItemsSidebar from "./CartItemsSidebar";
+import CartItemsSidebar from "./CartItemsSidebar";
 import MobileNavSidebar from "./MobileNavSidebar";
 import { formatCurrency } from "../../../common/utils";
 import Link from "next/link";
 
 export default function MenuFunctionIcons(props) {
-  // const cartState = useSelector((state) => state.cartReducer);
+  const cartState = useSelector((state) => state.cartReducer);
   const hide = props.hide || "";
   const [showSearch, setShowSearch] = useState(false);
   const [showCart, setShowCart] = useState(false);
@@ -83,12 +83,12 @@ export default function MenuFunctionIcons(props) {
                   }
                   alt="Cart icon"
                 />
-                {/* <span className="cart__quantity">{cartState.length}</span> */}
-                <span className="cart__quantity">2</span>
+                <span className="cart__quantity">{cartState.length}</span>
+                {/* <span className="cart__quantity">2</span> */}
               </a>
               <h5>
-                Cart: <span>$0.00</span>
-                {/* Cart: <span>{formatCurrency(calcalateTotal(cartState))}</span> */}
+                {/* Cart: <span>$0.00</span> */}
+                Cart: <span>{formatCurrency(calcalateTotal(cartState))}</span>
               </h5>
             </div>
             <a
@@ -109,7 +109,7 @@ export default function MenuFunctionIcons(props) {
       {/* Search input */}
       <SearchBox showSearch={showSearch} setShowSearch={setShowSearch} />
       {/* Cart sidebar */}
-      {/* <CartItemsSidebar showCart={showCart} setShowCart={setShowCart} /> */}
+      <CartItemsSidebar showCart={showCart} setShowCart={setShowCart} />
       {/* Mobile navigation sidebar */}
       <MobileNavSidebar
         showMobileNav={showMobileNav}

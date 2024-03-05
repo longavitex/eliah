@@ -1,8 +1,10 @@
+'use client'
+
 import React, { useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import { useForm } from "react-hook-form";
 
-import outsideClickHandle from "../../../common/ElementOutsideClick";
+import outsideClickHandle from "@/common/ElementOutsideClick";
 
 export default function SearchBox({ showSearch, setShowSearch }) {
   const { register, handleSubmit } = useForm();
@@ -26,7 +28,7 @@ export default function SearchBox({ showSearch, setShowSearch }) {
             type="text"
             placeholder="What are you looking for?"
             name="search"
-            ref={register}
+            {...register('search', { required: true })}
           />
           <button>
             <img

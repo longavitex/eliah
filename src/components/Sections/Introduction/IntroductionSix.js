@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import SectionTitleOne from "../SectionTitle/SectionTitleOne";
 import Link from "next/link";

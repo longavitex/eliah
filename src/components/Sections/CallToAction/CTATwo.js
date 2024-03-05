@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -35,13 +37,8 @@ export default function CTATwo() {
                         type="text"
                         placeholder="Name"
                         name="name"
-                        ref={register({ required: true })}
+                        {...register('name', { required: true })}
                       />
-                      {errors.name && (
-                        <span className="input-error">
-                          Please provide a valid name
-                        </span>
-                      )}
                     </div>
                   </div>
                   <div className="col-12 col-md-6">
@@ -50,13 +47,8 @@ export default function CTATwo() {
                         type="text"
                         placeholder="Phone"
                         name="phone"
-                        ref={register({ required: true })}
+                        {...register('phone', { required: true })}
                       />
-                      {errors.phone && (
-                        <span className="input-error">
-                          Please provide a valid phone number
-                        </span>
-                      )}
                     </div>
                   </div>
                   <div className="col-12 col-md-6">
@@ -65,20 +57,14 @@ export default function CTATwo() {
                         type="text"
                         placeholder="Your address"
                         name="address"
-                        ref={register({ required: true })}
+                        {...register('address', { required: true })}
                       />
-                      {errors.address && (
-                        <span className="input-error">
-                          Please provide a valid address
-                        </span>
-                      )}
                     </div>
                   </div>
                   <div className="col-12 col-md-6">
                     <div className="input-validator">
                       <select
                         name="produts"
-                        ref={register({ required: true })}
                         className="customed-select"
                         defaultValue=""
                       >
@@ -93,11 +79,6 @@ export default function CTATwo() {
                           )
                         )}
                       </select>
-                      {errors.produts && (
-                        <span className="input-error">
-                          Please choose a service
-                        </span>
-                      )}
                     </div>
                   </div>
                   <div className="col-12">
@@ -106,13 +87,8 @@ export default function CTATwo() {
                         type="text"
                         placeholder="Message"
                         name="message"
-                        ref={register({ required: true })}
+                        {...register('message', { required: true })}
                       />
-                      {errors.message && (
-                        <span className="input-error">
-                          Please provide a valid message
-                        </span>
-                      )}
                     </div>
                   </div>
                 </div>

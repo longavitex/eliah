@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from "react";
 import { Container } from "reactstrap";
 import Link from "next/link";
@@ -34,12 +36,12 @@ export default function TopNavTwo({ container }) {
             <Select
               options={["USD", "VND", "YEN"]}
               getValue={(val) => setCurrency(val)}
-              className="-borderless"
+              className="-white -borderless"
             />
             <Select
               options={["ENG", "VI", "JP"]}
               getValue={(val) => setLanguage(val)}
-              className="-borderless"
+              className="-white -borderless"
             />
             <Link href={process.env.PUBLIC_URL + "#"}>
               <span className="top-nav__auth">Login/Register</span>

@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useRef, useEffect } from "react";
 import Countdown, { zeroPad } from "react-countdown";
 import Parallax from "parallax-js";

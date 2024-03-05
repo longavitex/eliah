@@ -31,7 +31,7 @@ function CartItem(props) {
         </p>
       </div>
       <a className="cart-item__remove" href="#" onClick={removeProductHandle}>
-        <i className="fal fa-times"></i>
+        <i className="fas fa-times"></i>
       </a>
     </div>
   );

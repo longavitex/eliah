@@ -1,7 +1,9 @@
+'use client'
+
 import React from "react";
 import Countdown, { zeroPad } from "react-countdown";
 
-import Button from "../../Control/Button";
+import Button from "@/components/Control/Button";
 
 export default function DaleOfWeekOne({ subTitle, title, last }) {
   return (

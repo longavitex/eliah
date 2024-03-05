@@ -523,6 +523,10 @@
 .introduction-seven {
   margin-bottom: remCal(100);
 
+  .ml-auto {
+    margin-left: auto;
+  }
+
   &__wrapper {
     width: 100%;
     position: relative;

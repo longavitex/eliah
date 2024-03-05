@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import Link from "next/link";
@@ -29,16 +31,14 @@ export default function ProductTabTwo({ data }) {
                   })}
                   key={index}
                 >
-                  <Link href={process.env.PUBLIC_URL + "PUBLIC_URL"}>
-                    <span
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setCurrentCategory(category);
-                      }}
-                    >
-                      {category}
-                    </span>
-                  </Link>
+                  <a href={process.env.PUBLIC_URL + "#!"}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setCurrentCategory(category);
+                    }}
+                  >
+                    {category}
+                  </a>
                 </li>
               ))}
             </ul>

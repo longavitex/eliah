@@ -1,5 +1,5 @@
 import SectionTitleOne from "../SectionTitle/SectionTitleOne";
-import PostCardOne from "../../Post/PostCardOne";
+import PostCardOne from "@/components/Post/PostCardOne";
 
 export default function BlogOne({ data }) {
   return (

@@ -1,11 +1,13 @@
+'use client'
+
 import React, { useState } from "react";
 import classNames from "classnames";
 import Link from "next/link";
 
 import SectionTitleOne from "../../SectionTitle/SectionTitleOne";
-import Product from "../../../Product";
-import Button from "../../../Control/Button";
-import { getProducts } from "../../../../common/productSelect";
+import Product from "@/components/Product";
+import Button from "@/components/Control/Button";
+import { getProducts } from "@/common/productSelect";
 
 export default function ProductTabOne({ data, categories }) {
   const [currentCategory, setCurrentCategory] = useState(
@@ -24,16 +26,14 @@ export default function ProductTabOne({ data, categories }) {
                 className={classNames({ active: currentCategory === category })}
                 key={index}
               >
-                <Link href={process.env.PUBLIC_URL + "#"}>
-                  <span
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setCurrentCategory(category);
-                    }}
-                  >
-                    {category}
-                  </span>
-                </Link>
+                <a href={process.env.PUBLIC_URL + "#!"}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setCurrentCategory(category);
+                  }}
+                >
+                  {category}
+                </a>
               </li>
             ))}
           </ul>

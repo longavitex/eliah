@@ -1,11 +1,13 @@
+'use client'
+
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { CSSTransition } from "react-transition-group";
 
 import CartItem from "./CartItem";
-import ClientOnlyPortal from "../../../common/ClientOnlyPortal";
-import Button from "../../Control/Button";
-import { calculateTotalPrice } from "../../../common/shopUtils";
+import ClientOnlyPortal from "@/common/ClientOnlyPortal";
+import Button from "@/components/Control/Button";
+import { calculateTotalPrice } from "@/common/shopUtils";
 
 function CartItemsSidebar({ showCart, setShowCart }) {
   const cartState = useSelector((state) => state.cartReducer);

@@ -1,11 +1,30 @@
+'use client'
+
 import { useState } from "react";
-import { Accordion, Card } from "react-bootstrap";
+// import { Accordion,  } from "react-bootstrap";
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
+import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 
-import Button from "../../Control/Button";
+import Button from "@/components/Control/Button";
 import SectionTitleOne from "../SectionTitle/SectionTitleOne";
-import Quantity from "../../../components/Control/Quantity";
+import Quantity from "@/components/Control/Quantity";
 
-export default function IntroductionSeven({ data }) {
+function CustomToggle({ children, eventKey }) {
+  const decoratedOnClick = useAccordionButton(eventKey, () =>
+    console.log('totally custom!'),
+  );
+
+  return (
+    <div className="card-header"
+      onClick={decoratedOnClick}
+    >
+      {children}
+    </div>
+  );
+}
+
+const IntroductionSeven = ({ data }) => {
   const [currentAccordionIndex, setCurrentAccordionIndex] = useState(1);
   const [quantity, setQuantity] = useState();
   return (
@@ -72,15 +91,15 @@ export default function IntroductionSeven({ data }) {
                     {data &&
                       data.map((item, index) => (
                         <Card key={index}>
-                          <Accordion.Toggle as={Card.Header} eventKey={item.id}>
+                          <CustomToggle eventKey={item.id}>
                             {item.header}
                             <i
                               className={`fa fa-angle-${parseInt(currentAccordionIndex) === item.id
-                                  ? "up"
-                                  : "down"
+                                ? "up"
+                                : "down"
                                 }`}
                             />
-                          </Accordion.Toggle>
+                          </CustomToggle>
                           <Accordion.Collapse eventKey={item.id}>
                             <Card.Body>
                               <p>{item.body}</p>
@@ -109,3 +128,5 @@ export default function IntroductionSeven({ data }) {
     </div>
   );
 }
+
+export default IntroductionSeven

@@ -1,3 +1,5 @@
+'use client'
+
 import Head from "next/head";
 
 import withScrollFixed from "../../common/withScrollFixed";

@@ -1,4 +1,4 @@
-import Head from "next/head";
+'use client'
 
 import withScrollFixed from "../../common/withScrollFixed";
 import FooterOne from "../Footer/FooterOne";
@@ -9,9 +9,6 @@ let ScrollFixedHeader = withScrollFixed(HeaderFour);
 export default function LayoutFour(props) {
   return (
     <>
-      <Head>
-        <title>{props.title || "Eliah | React"}</title>
-      </Head>
       <ScrollFixedHeader container={props.container} />
       {props.children}
       <FooterOne />
