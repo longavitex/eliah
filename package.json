@@ -42,7 +42,6 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "react-image-lightbox": "^5.1.4",
     "sass": "^1.71.1"
   }
 }
