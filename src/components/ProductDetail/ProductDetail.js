@@ -9,10 +9,10 @@ export default function ProductDetail({ data, onReviewSubmit }) {
       <div className="container">
         <div className="product-detail__wrapper">
           <div className="row">
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 pe-md-4">
               <ProductDetailSlideTwo data={data} />
             </div>
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 ps-md-4">
               <ProductDetailInfo data={data} onReviewSubmit={onReviewSubmit} />
             </div>
           </div>

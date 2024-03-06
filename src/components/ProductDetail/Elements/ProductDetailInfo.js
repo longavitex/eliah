@@ -1,3 +1,5 @@
+'use client'
+
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -44,9 +46,9 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
         <div className="product-detail__content__header__comment-block">
           <Rate currentRate={data.rate} />
           <p>03 Reviews</p>
-          <Link href={process.env.PUBLUC_URL + "#"}>
+          <a href={"#!"}>
             <span>Write a reviews</span>
-          </Link>
+          </a>
         </div>
         <h3>
           {data.discount

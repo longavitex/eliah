@@ -51,11 +51,11 @@ export default function BlogSidebar({ limit, popularPostData }) {
           {blog.CATEGORIES.map((item, index) => (
             <li key={index}>
               <Link
-                href={process.env.PUBLIC_URL + "/blog/?category=[slug]"}
-                as={process.env.PUBLIC_URL + "/blog/?category=" + item}
+                href={process.env.PUBLIC_URL + "/blog?category=[slug]"}
+                as={process.env.PUBLIC_URL + "/blog?category=" + item}
               >
                 <div>
-                  {item}
+                  {item} 
                   <span>{getCategoryQuantity(blogData, item)}</span>
                 </div>
               </Link>

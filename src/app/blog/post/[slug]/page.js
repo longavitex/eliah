@@ -15,12 +15,11 @@ export default function ({ params: { slug } }) {
   // Decode URL
   const decodedSlug = decodeURIComponent(slug);
 
-  // Xử lý động với dấu ' và "
+  // handle with ' and "
   const cleanedSlug = decodedSlug.replace(/['"]/g, "'");
-  console.log(cleanedSlug);
 
   const foundPost = getPostBySlug(data, cleanedSlug);
-  console.log(foundPost);
+  
   return (
     foundPost !== null && (
       <LayoutFour tilte={foundPost.title}>

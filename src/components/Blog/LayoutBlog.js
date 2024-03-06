@@ -1,29 +1,34 @@
 'use client'
 
 import React, { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Paginator from "react-hooks-paginator";
 
 import BlogSidebar from "./BlogSidebar";
 import blogData from "@/data/blog/blog.json";
-import { getPostByKeyword } from "@/common/postSelect";
+import { getPostByKeyword, getPosts } from "@/common/postSelect";
 import BlogContent from "./BlogContent";
 
 const LayoutBlog = () => {
-  const router = useRouter();
-  // const search = router.Se;
-  const search = router.searchParam
+  const searchParams = useSearchParams();
+  const search = searchParams.get("search");
+  const category = searchParams.get("category");
   const pageLimit = 7;
   const [offset, setOffset] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentData, setCurrentData] = useState([]);
+  
   useEffect(() => {
     if (!search || search.length === 0) {
-      setCurrentData(blogData);
+      if (!category || category.length === 0) {
+        setCurrentData(blogData);
+      } else {
+        setCurrentData(getPosts(blogData, category));
+      }
     } else {
       setCurrentData(getPostByKeyword(blogData, search));
     }
-  }, [offset, search]);
+  }, [offset, search, category]);
 
   return (
     <div className="blog">
@@ -33,7 +38,7 @@ const LayoutBlog = () => {
             <BlogSidebar limit={5} popularPostData={blogData} />
           </div>
           <div className="col-12 col-lg-9">
-            <BlogContent offset={offset} search={search} data={currentData} />
+            <BlogContent offset={offset} search={search} category={category} data={currentData} />
             <Paginator
               pageContainerClass="paginator"
               totalRecords={currentData.length}

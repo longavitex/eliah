@@ -60,11 +60,8 @@ export default function ProductDetailInfoTab({ onReviewSubmit }) {
                     type="text"
                     name="name"
                     placeholder="Name"
-                    ref={register({ required: true })}
+                    {...register('name', { required: true })}
                   />
-                  {errors.name && (
-                    <span className="input-error">Please provide a name</span>
-                  )}
                 </div>
               </div>
               <div className="col-12 col-md-6">
@@ -73,11 +70,8 @@ export default function ProductDetailInfoTab({ onReviewSubmit }) {
                     type="text"
                     name="email"
                     placeholder="Email"
-                    ref={register({ required: true })}
+                    {...register('email', { required: true })}
                   />
-                  {errors.email && (
-                    <span className="input-error">Please provide an email</span>
-                  )}
                 </div>
               </div>
               <div className="col-12">
@@ -86,10 +80,9 @@ export default function ProductDetailInfoTab({ onReviewSubmit }) {
                     name="message"
                     placeholder="Message"
                     rows="5"
-                    ref={register}
+                    {...register('message', { required: true })}
                   />
                 </div>
-                {errors.message && <span className="input-error"></span>}
               </div>
               <div className="col-12">
                 <button className="btn -dark">Write a review</button>

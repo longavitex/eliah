@@ -4,11 +4,11 @@ export const getPosts = (posts, category, limit) => {
     ? posts.filter(
       (post) => post.category.toLowerCase() === category.toLowerCase()
     )
-    : products;
+    : posts;
 
   return (
-    finalProducts &&
-    finalProducts.slice(0, limit ? limit : finalProducts.length)
+    finalPosts &&
+    finalPosts.slice(0, limit ? limit : finalPosts.length)
   );
 };
 

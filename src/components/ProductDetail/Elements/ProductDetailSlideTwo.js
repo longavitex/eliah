@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
 import { PrevArrow, NextArrow } from "../../Other/SliderArrow";

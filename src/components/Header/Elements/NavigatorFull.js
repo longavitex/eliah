@@ -24,7 +24,7 @@ export default function NavigationFull({ showMenu, setShowMenu }) {
               href="#"
               className="close-btn"
             >
-              <i className="fal fa-times"></i>
+              <i className="fas fa-times"></i>
             </a>
             <ul>
               {menuData.map((item, index) => (
