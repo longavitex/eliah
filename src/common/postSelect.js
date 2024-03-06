@@ -2,8 +2,8 @@
 export const getPosts = (posts, category, limit) => {
   const finalPosts = category
     ? posts.filter(
-        (post) => post.category.toLowerCase() === category.toLowerCase()
-      )
+      (post) => post.category.toLowerCase() === category.toLowerCase()
+    )
     : products;
 
   return (
@@ -16,8 +16,8 @@ export const getPosts = (posts, category, limit) => {
 export const getCategoryQuantity = (posts, category) => {
   return category
     ? posts.filter(
-        (post) => post.category.toLowerCase() === category.toLowerCase()
-      ).length
+      (post) => post.category.toLowerCase() === category.toLowerCase()
+    ).length
     : 0;
 };
 

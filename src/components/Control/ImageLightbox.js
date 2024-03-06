@@ -1,6 +1,6 @@
 import { useState } from "react";
 import classNames from "classnames";
-import Lightbox from "react-image-lightbox";
+// import Lightbox from "react-image-lightbox";
 
 export default function ImageLightbox({ imgSrc, className, alt }) {
   const [isOpen, setIsOpen] = useState(false);

@@ -8,19 +8,19 @@ export default function PostCarThree({ data }) {
         href={process.env.PUBLIC_URL + "/blog/post/[slug]"}
         as={process.env.PUBLIC_URL + "/blog/post/" + data.slug}
       >
-        <a className="post-card-three__image">
+        <span className="post-card-three__image">
           <img
             src={process.env.PUBLIC_URL + data.thumbImage}
             alt={data.title}
           />
-        </a>
+        </span>
       </Link>
       <div className="post-card-three__content">
         <Link
           href={process.env.PUBLIC_URL + "/blog/post/[slug]"}
           as={process.env.PUBLIC_URL + "/blog/post/" + data.slug}
         >
-          <a>{data.title}</a>
+          <span>{data.title}</span>
         </Link>
         <p>{data.publicDate}</p>
       </div>

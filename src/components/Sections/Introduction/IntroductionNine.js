@@ -1,7 +1,9 @@
+'use client'
+
 import Slider from "react-slick";
 
-import Button from "../../Control/Button";
-import { PrevArrow, NextArrow } from "../../Other/SliderArrow";
+import Button from "@/components/Control/Button";
+import { PrevArrow, NextArrow } from "@/components/Other/SliderArrow";
 
 export default function IntroductionNine() {
   const settings = {
