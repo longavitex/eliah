@@ -1,6 +1,7 @@
 import { League_Spartan } from "next/font/google";
 import '@/styles/styles.scss';
 import '@/styles/fontawesome/css/all.css';
+import '/public/fonts/main.css';
 import GlobalProvider from "./GlobalProvider";
 
 const spartan = League_Spartan({ subsets: ["latin"] });
@@ -13,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={spartan.className}>
+      <body>
         <GlobalProvider>
           {children}
           <div id="nav-full" />
